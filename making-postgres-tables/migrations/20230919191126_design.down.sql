@@ -1,0 +1,9 @@
+drop table if exists review;
+drop table if exists booking;
+drop table if exists room_amenity;
+drop table if exists amenity;
+drop table if exists room;
+drop table if exists hotel;
+drop table if exists user_contact;
+drop table if exists "user";
+drop type if exists booking_status;
