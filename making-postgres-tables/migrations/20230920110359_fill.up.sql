@@ -1,6 +1,6 @@
 begin transaction;
 
-insert into "user" (id, name, email, username, password)
+insert into "user" (id, name, email, username, hashed_password)
 values (1, 'admin', 'admin@localhost', 'admin', 'admin'),
        (2, 'aboba', 'aboba@localhost', 'aboba', 'aboba'),
        (3, 'user3', 'user3@localhost', 'user3', 'password3'),

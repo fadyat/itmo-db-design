@@ -11,11 +11,11 @@ Creating tables:
 ```sql
 create table "user"
 (
-    id       int primary key,
-    name     varchar(255) not null,
-    email    varchar(255) not null,
-    username varchar(255) not null,
-    password varchar(255) not null,
+    id              int primary key,
+    name            varchar(255) not null,
+    email           varchar(255) not null,
+    username        varchar(255) not null,
+    hashed_password varchar(255) not null,
 
     unique (email),
     unique (username)
@@ -25,7 +25,7 @@ create table user_contact
 (
     id      int primary key,
     user_id int references "user" (id) not null,
-    phone   varchar(255)               not null,
+    phone   varchar(20)                not null,
     address varchar(255)               not null,
 
     unique (user_id)
@@ -112,7 +112,7 @@ Filling tables with some data:
 ```sql
 begin transaction;
 
-insert into "user" (id, name, email, username, password)
+insert into "user" (id, name, email, username, hashed_password)
 values (1, 'admin', 'admin@localhost', 'admin', 'admin'),
        (2, 'aboba', 'aboba@localhost', 'aboba', 'aboba'),
        (3, 'user3', 'user3@localhost', 'user3', 'password3'),

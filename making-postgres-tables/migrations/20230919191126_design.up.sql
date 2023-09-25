@@ -1,10 +1,10 @@
 create table "user"
 (
-    id       int primary key,
-    name     varchar(255) not null,
-    email    varchar(255) not null,
-    username varchar(255) not null,
-    password varchar(255) not null,
+    id              int primary key,
+    name            varchar(255) not null,
+    email           varchar(255) not null,
+    username        varchar(255) not null,
+    hashed_password varchar(255) not null,
 
     unique (email),
     unique (username)
@@ -14,7 +14,7 @@ create table user_contact
 (
     id      int primary key,
     user_id int references "user" (id) not null,
-    phone   varchar(255)               not null,
+    phone   varchar(20)                not null,
     address varchar(255)               not null,
 
     unique (user_id)
