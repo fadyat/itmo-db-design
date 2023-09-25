@@ -1,4 +1,7 @@
-Making design of a https://booking.com
+## Design system like Booking
+
+- Fadeyev Artyom M34021
+- Making design of a https://booking.com
 
 ### Description
 

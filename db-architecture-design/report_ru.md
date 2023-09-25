@@ -1,4 +1,7 @@
-Проектирование схемы БД для https://booking.com
+## Design system like Booking
+
+- Выполнил: Фадеев Артём M34021
+- Проектирование схемы БД для https://booking.com
 
 ## Описание
 
