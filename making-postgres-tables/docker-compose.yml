@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   psql:
-    image: postgres:14.5-alpine
+    image: ${POSTGRES_IMAGE:-postgres:14.5-alpine}
     shm_size: 1g
     ports:
       - "5432:5432"
