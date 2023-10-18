@@ -18,7 +18,17 @@ values (1, 'admin', 'admin@localhost', 'admin', 'admin'),
        (15, 'user15', 'user15@localhost', 'user15', 'password15');
 
 insert into user_contact (id, user_id, phone, address)
-values (1, 1, '+78005553535', 'Saint-Petersburg');
+values (1, 1, '+78005553535', 'Saint-Petersburg'),
+       (2, 2, '+15551234567', 'New York'),
+       (3, 3, '+441234567890', 'London'),
+       (4, 4, '+61234567890', 'Sydney'),
+       (5, 5, '+81345678901', 'Tokyo'),
+       (6, 6, '+491234567890', 'Berlin'),
+       (7, 7, '+331234567890', 'Paris'),
+       (8, 8, '+551234567890', 'Sao Paulo'),
+       (9, 9, '+861234567890', 'Beijing'),
+       (10, 10, '+911234567890', 'New Delhi'),
+       (11, 11, '+12015551234', 'Los Angeles');
 
 insert into hotel (id, name, location, description, founder_id)
 values (1, 'Grand Hotel', '(-73.9877, 40.7577)', 'Luxury hotel in downtown', 1),

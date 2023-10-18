@@ -16,10 +16,7 @@ pre:
 	@migrate -path $(INDEXES_DIR) -database ${DSN} up
 	@docker exec -it making-postgres-tables_psql_1 psql -U postgres -c "DROP TABLE schema_migrations;"
 
-down:
-	@migrate -path $(MIGRATIONS_DIR) -database ${DSN} down -all
-
 _up:
 	@migrate -path $(MIGRATIONS_DIR) -database ${DSN} up
 
-apply: down _up
+apply: pre _up
