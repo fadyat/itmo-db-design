@@ -1,7 +1,7 @@
 DSN := "postgres://postgres:postgres@localhost:5432/postgres?sslmode=disable"
 
 up:
-	@docker-compose up psql
+	@docker-compose up -d psql
 
 drop:
 	@migrate -path ./migrations -database ${DSN} drop

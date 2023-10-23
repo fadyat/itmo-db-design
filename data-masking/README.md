@@ -122,34 +122,34 @@ select * from generalized_bookings limit 5;
 
 - **Faking**
 
-```sql
--- custom function to generate fake phone numbers
-create function anon.fake_phone() returns text as
-$$
-begin
-    return '+' || lpad((random() * 10000000000)::bigint::varchar, 10, '0');
-end;
-$$ language plpgsql;
-
--- using faking techniques to generate fake data
-create materialized view faked_user_contacts as
-select id,
-       user_id,
-       anon.fake_phone()   as phone,
-       anon.fake_address() as address
-from user_contact;
-```
-
-```sql
-select * from faked_user_contacts limit 5;
-
---  id | user_id |    phone    |                          address                          
--- ----+---------+-------------+-----------------------------------------------------------
---   1 |       1 | +6111019964 | 2249 Brandon Freeway Apt. 684, West Anthonyberg, CT 00662
---   2 |       2 | +7219243561 | 689 Wiley Hill, South Patricia, RI 07445
---   3 |       3 | +8269829795 | Unit 0342 Box 2288, DPO AE 91483
---   4 |       4 | +4866410958 | 07910 Scott Island Apt. 514, North Aprilport, SD 19662
---   5 |       5 | +7641590937 | 4576 Scott Mews Apt. 324, West Thomasmouth, IA 60794
-```
+  ```sql
+  -- custom function to generate fake phone numbers
+  create function anon.fake_phone() returns text as
+  $$
+  begin
+      return '+' || lpad((random() * 10000000000)::bigint::varchar, 10, '0');
+  end;
+  $$ language plpgsql;
+  
+  -- using faking techniques to generate fake data
+  create materialized view faked_user_contacts as
+  select id,
+         user_id,
+         anon.fake_phone()   as phone,
+         anon.fake_address() as address
+  from user_contact;
+  ```
+  
+  ```sql
+  select * from faked_user_contacts limit 5;
+  
+  --  id | user_id |    phone    |                          address                          
+  -- ----+---------+-------------+-----------------------------------------------------------
+  --   1 |       1 | +6111019964 | 2249 Brandon Freeway Apt. 684, West Anthonyberg, CT 00662
+  --   2 |       2 | +7219243561 | 689 Wiley Hill, South Patricia, RI 07445
+  --   3 |       3 | +8269829795 | Unit 0342 Box 2288, DPO AE 91483
+  --   4 |       4 | +4866410958 | 07910 Scott Island Apt. 514, North Aprilport, SD 19662
+  --   5 |       5 | +7641590937 | 4576 Scott Mews Apt. 324, West Thomasmouth, IA 60794
+  ```
 
 
