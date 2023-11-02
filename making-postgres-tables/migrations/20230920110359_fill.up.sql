@@ -31,21 +31,21 @@ values (1, 1, '+78005553535', 'Saint-Petersburg'),
        (11, 11, '+12015551234', 'Los Angeles');
 
 insert into hotel (id, name, location, description, founder_id)
-values (1, 'Grand Hotel', '(-73.9877, 40.7577)', 'Luxury hotel in downtown', 1),
-       (2, 'Seaside Resort', '(-118.2437, 34.0522)', 'Beautiful resort on the coast', 1),
-       (3, 'Mountain Lodge', '(-105.2705, 40.0150)', 'Cozy lodge in the mountains', 1),
-       (4, 'City View Inn', '(-80.1918, 25.7617)', 'Affordable hotel with great city views', 1),
-       (5, 'Riverside Retreat', '(-90.1848, 38.6270)', 'Relaxing retreat by the river', 1),
-       (6, 'Desert Oasis', '(-112.0740, 33.4484)', 'Escape to the desert paradise', 1),
-       (7, 'Historic Mansion Hotel', '(-71.2082, 42.3601)', 'Stay in a beautifully restored mansion', 1),
-       (8, 'Beachfront Paradise', '(-156.4660, 20.7967)', 'Direct access to the sandy beach', 1),
-       (9, 'Alpine Chalet', '(-114.0719, 51.0447)', 'Cozy chalet in the alpine wilderness', 1),
-       (10, 'Downtown Boutique', '(-117.1611, 32.7157)', 'Charming boutique hotel in the heart of the city', 1),
-       (11, 'Countryside Inn', '(-77.6174, 43.1610)', 'Experience tranquility in the countryside', 1),
-       (12, 'Lakeside Lodge', '(-84.5194, 44.3148)', 'Enjoy serene lake views from your room', 2),
-       (13, 'Tropical Hideaway', '(-80.1918, 25.7617)', 'Escape to a tropical paradise', 1),
-       (14, 'Mountaintop Retreat', '(-118.2437, 34.0522)', 'Breathtaking views from the mountaintop', 1),
-       (15, 'Urban Elegance Hotel', '(-73.9877, 40.7577)', 'Elegant hotel in the heart of the city', 1);
+values (1, 'Grand Hotel', '(40.7577, -73.9877)', 'Luxury hotel in downtown', 1),
+       (2, 'Seaside Resort', '(34.0522, -118.2437)', 'Beautiful resort on the coast', 1),
+       (3, 'Mountain Lodge', '(40.0150, -105.2705)', 'Cozy lodge in the mountains', 1),
+       (4, 'City View Inn', '(25.7617, -80.1918)', 'Affordable hotel with great city views', 1),
+       (5, 'Riverside Retreat', '(38.6270, -90.1848)', 'Relaxing retreat by the river', 1),
+       (6, 'Desert Oasis', '(33.4484, -112.0740)', 'Escape to the desert paradise', 1),
+       (7, 'Historic Mansion Hotel', '(42.3601, -71.2082)', 'Stay in a beautifully restored mansion', 1),
+       (8, 'Beachfront Paradise', '(20.7967, -156.4660)', 'Direct access to the sandy beach', 1),
+       (9, 'Alpine Chalet', '(51.0447, -114.0719)', 'Cozy chalet in the alpine wilderness', 1),
+       (10, 'Downtown Boutique', '(32.7157, -117.1611)', 'Charming boutique hotel in the heart of the city', 1),
+       (11, 'Countryside Inn', '(43.1610, -77.6174)', 'Experience tranquility in the countryside', 1),
+       (12, 'Lakeside Lodge', '(44.3148, -84.5194)', 'Enjoy serene lake views from your room', 2),
+       (13, 'Tropical Hideaway', '(25.7617, -80.1918)', 'Escape to a tropical paradise', 1),
+       (14, 'Mountaintop Retreat', '(34.0522, -118.2437)', 'Breathtaking views from the mountaintop', 1),
+       (15, 'Urban Elegance Hotel', '(40.7577, -73.9877)', 'Elegant hotel in the heart of the city', 1);
 
 insert into amenity (id, name)
 values (1, 'Swimming Pool'),
