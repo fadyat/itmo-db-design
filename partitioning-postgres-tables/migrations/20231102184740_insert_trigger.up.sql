@@ -1,6 +1,7 @@
 begin transaction;
 
-create or replace function on_hotels_insert() returns trigger as
+create or replace function on_hotels_insert()
+    returns trigger as
 $$
 begin
     if (
@@ -30,6 +31,7 @@ begin
         )
     then
         insert into hotels_eastern values (new.*);
+
     else
         insert into hotels_others values (new.*);
     end if;

@@ -2,7 +2,7 @@ DSN := "postgres://postgres:postgres@localhost:5432/postgres?sslmode=disable"
 FILLING_DIR := ../making-postgres-tables/migrations
 INDEXES_DIR := ../views-and-indexes/migrations
 MIGRATE_DIR := ./migrations
-CONTAINER_NAME := making-postgres-tables-psql-1
+CONTAINER_NAME := making-postgres-tables_psql_1
 
 up:
 	@docker-compose -f ../making-postgres-tables/docker-compose.yml up
