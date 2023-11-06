@@ -1,0 +1,54 @@
+[
+  {
+    "insert": "userCollection",
+    "documents": [
+      {
+        "id": 1,
+        "name": "admin",
+        "email": "admin@localhost",
+        "username": "admin",
+        "hashed_password": "admin",
+        "contacts": {
+          "id": 1,
+          "phone": "+78005553535",
+          "address": "Saint-Petersburg"
+        }
+      },
+      {
+        "id": 2,
+        "name": "aboba",
+        "email": "aboba@localhost",
+        "username": "aboba",
+        "hashed_password": "aboba",
+        "contacts": {
+          "id": 2,
+          "phone": "+15551234567",
+          "address": "New York"
+        }
+      },
+      {
+        "id": 3,
+        "name": "noContactsMan",
+        "email": "noContactsMan@localhost",
+        "username": "noContactsMan",
+        "hashed_password": "noContactsMan"
+      },
+      {
+        "id": 4,
+        "name": "nullContactsMan",
+        "email": "nullContactsMan@localhost",
+        "username": "nullContactsMan",
+        "hashed_password": "nullContactsMan",
+        "contacts": null
+      },
+      {
+        "id": 5,
+        "name": "emptyContactsMan",
+        "email": "emptyContactsMan@localhost",
+        "username": "emptyContactsMan",
+        "hashed_password": "emptyContactsMan",
+        "contacts": {}
+      }
+    ]
+  }
+]

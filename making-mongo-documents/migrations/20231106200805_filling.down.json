@@ -1,0 +1,11 @@
+[
+  {
+    "delete": "userCollection",
+    "deletes": [
+      {
+        "q": {},
+        "limit": 0
+      }
+    ]
+  }
+]

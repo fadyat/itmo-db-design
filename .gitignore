@@ -1,3 +1,5 @@
 postgresql_data
 .idea
 .DS_Store
+mongodb
+mongoconfig
