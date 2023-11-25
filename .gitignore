@@ -3,3 +3,4 @@ postgresql_data
 .DS_Store
 mongodb
 mongoconfig
+postgres-artifacts

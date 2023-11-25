@@ -13,6 +13,7 @@ services:
     volumes:
       - ./postgresql_data:/var/lib/postgresql/data
       - ./migrations:/migrations
+      - ${MIGRATING_DATA:-./migrating-data}:/tmp/
 
 volumes:
   postgresql_data:
