@@ -45,14 +45,18 @@ copy (
     select row_to_json(rows)
     from (with room_amenities as (select room_amenity.room_id as room_id,
                                          json_agg(
-                                                 json_build_object(
-                                                         'id', amenity.id,
-                                                         'name', amenity.name
-                                                 )
+                                                 case
+                                                     when amenity.id is null then null
+                                                     else
+                                                         json_build_object(
+                                                                 'id', amenity.id,
+                                                                 'name', amenity.name
+                                                         )
+                                                     end
                                          )                    as amenities
                                   from room_amenity
-                                           join amenity
-                                                on room_amenity.amenity_id = amenity.id
+                                           left join amenity
+                                                     on room_amenity.amenity_id = amenity.id
                                   group by room_amenity.room_id)
           select hotel.id,
                  hotel.name,

@@ -9,13 +9,6 @@ up-postgres:
 up:
 	@docker-compose -f docker-compose.yml up
 
-new:
-	@migrate create -ext json -dir ./migrations $(NAME)
-
-apply:
-	@migrate -path ./migrations -database ${DSN} down -all
-	@migrate -path ./migrations -database ${DSN} up
-
 kill:
 	@docker kill $(CONTAINER_NAME) || true
 
@@ -28,5 +21,5 @@ import:
 	@chmod +x ./import.sh
 	@./import.sh
 
-.PHONY: up kill new apply restart clean
+.PHONY: up up-postgres kill restart clean
 
