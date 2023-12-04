@@ -1,71 +1,55 @@
 begin transaction;
 
-alter table hotels_pacific
-    no inherit hotel;
 
-alter table hotels_mountain
-    no inherit hotel;
+alter table room
+    drop constraint if exists room_hotel_id_fkey;
 
-alter table hotels_central
-    no inherit hotel;
-
-alter table hotels_eastern
-    no inherit hotel;
-
-alter table hotels_others
-    no inherit hotel;
-
-insert into hotels_pacific
+with data as (
+    delete from only hotel
+        where location[1] >= get_longitude('san-francisco')
+            and location[1] < get_longitude('west-wendover')
+        returning *)
+insert
+into hotels_pacific
 select *
-from hotel
-where location[1] >= get_longitude('san-francisco')
-  and location[1] < get_longitude('west-wendover');
+from data;
 
-
-insert into hotels_mountain
+with data as (
+    delete from only hotel
+        where location[1] >= get_longitude('west-wendover')
+            and location[1] < get_longitude('denver')
+        returning *)
+insert
+into hotels_mountain
 select *
-from hotel
-where location[1] >= get_longitude('west-wendover')
-  and location[1] < get_longitude('denver');
+from data;
 
-insert into hotels_central
+with data as (
+    delete from only hotel
+        where location[1] >= get_longitude('denver')
+            and location[1] < get_longitude('chicago')
+        returning *)
+insert
+into hotels_central
 select *
-from hotel
-where location[1] >= get_longitude('denver')
-  and location[1] < get_longitude('chicago');
+from data;
 
-insert into hotels_eastern
+with data as (
+    delete from only hotel
+        where location[1] >= get_longitude('chicago')
+            and location[1] < get_longitude('boston')
+        returning *)
+insert
+into hotels_eastern
 select *
-from hotel
-where location[1] >= get_longitude('chicago')
-  and location[1] < get_longitude('boston');
+from data;
 
-insert into hotels_others
+with data as (
+    delete from only hotel
+        where location[1] >= get_longitude('boston')
+            or location[1] < get_longitude('san-francisco')
+        returning *)
 select *
-from hotel
-where location[1] >= get_longitude('boston')
-   or location[1] < get_longitude('san-francisco');
-
-
--- done only for testing issues, not for production
--- removing all the data from the hotel table and related tables
---
--- current query is not rolled back
-truncate hotel cascade;
-
-alter table hotels_pacific
-    inherit hotel;
-
-alter table hotels_mountain
-    inherit hotel;
-
-alter table hotels_central
-    inherit hotel;
-
-alter table hotels_eastern
-    inherit hotel;
-
-alter table hotels_others
-    inherit hotel;
+from data;
 
 commit transaction;
